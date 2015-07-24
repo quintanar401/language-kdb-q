@@ -1,0 +1,16 @@
+{
+  "name": "language-kdb-q",
+  "main": "./lib/kdb-q",
+  "version": "0.0.0",
+  "description": "Language support for Q and K languages of KDB+",
+  "keywords": [
+  ],
+  "repository": "https://github.com/quintanar401/language-kdb-q",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "underscore-plus": "1.x"
+  }
+}

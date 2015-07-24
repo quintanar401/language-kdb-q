@@ -1,0 +1,136 @@
+'scopeName': 'source.q'
+'name': 'Q'
+'fileTypes': [
+  'q'
+  'k'
+]
+'patterns': [
+  {
+    'comment': 'simple block comment'
+    'begin': '^/\\s*$'
+    'end': '^\\\\\\s*$'
+    'name': 'comment.block.simple.q'
+  }
+  {
+    'comment': 'til EOF comment'
+    'begin': '^\\\\\\s*$'
+    'name': 'comment.block.eof.q'
+  }
+  {
+    'comment': 'one line comment - beware scan'
+    'match': '(^/.*$|\\s+/.*$)'
+    'name': 'comment.line.q'
+  }
+  {
+    'comment': 'system command'
+    'match': '^\\\\.*$'
+    'name': 'constant.other.q'
+  }
+  {
+    'begin': '"'
+    'end': '"'
+    'name': 'string.quoted.single.q'
+    'patterns': [
+      'match': '\\\\(\\\\|n|t|r|")'
+      'name': 'constant.character.escape.q'
+    ]
+  }
+  {
+    'match': '\\b(and|or|except|inter|like|each|cross|vs|sv|within|where|in|asof|bin|binr|cor|cov|cut|ej|fby|\
+      div|ij|insert|lj|ljf|mavg|mcount|mdev|med|mmax|mmin|mmu|mod|msum|over|prior|peach|pj|scan|scov|setenv|ss|\
+      sublist|uj|union|upsert|wavg|wsum|xasc|xbar|xcol|xcols|xdesc|xexp|xgroup|xkey|xlog|xprev|xrank)\\b'
+    'name': 'keyword.operator.q'
+  }
+  {
+    'match': '\\b(do|if|while|select|update|delete|exec|from|by)\\b'
+    'name': 'keyword.control.q'
+  }
+  {
+    'match': '0[nNwW][hijefcpmdznuvt]?'
+    'name': 'constant.language.q'
+  }
+  {
+    'match': '\\b(x|y|z)\\b'
+    'name': 'variable.language.q'
+  }
+  {
+    'match': '\\b(first|enlist|value|type|get|set|count|string|key|max|min|sum|prd|last|flip|distinct|raze|neg|\
+      til|upper|lower|abs|acos|aj|aj0|not|null|any|asc|asin|attr|avg|avgs|ceiling|cols|cos|csv|all|atan|deltas|\
+      desc|differ|dsave|dev|eval|exit|exp|fills|fkeys|floor|getenv|group|gtime|hclose|hcount|hdel|hopen|hsym|\
+      iasc|idesc|inv|keys|load|log|lsq|ltime|ltrim|maxs|md5|meta|mins|next|parse|plist|prds|prev|rand|rank|ratios|\
+      read0|read1|reciprocal|reverse|rload|rotate|rsave|rtrim|save|sdev|show|signum|sin|sqrt|ssr|sums|svar|system|\
+      tables|tan|trim|txf|ungroup|var|view|views|wj|wj1|ww)\\b'
+    'name': 'support.function.q'
+  }
+  {
+    'comment': 'timespan/stamp consts'
+    'match': '(?:\\d+D|\\d\\d\\d\\d\\.[01]\\d\\.[0123]\\d[DT])(?:[01]\\d\\:[0-5]\\d(?:\\:[0-5]\\d(?:\\.\\d+)?)?|([01]\\d)?)[zpn]?\\b'
+    'name': 'constant.numeric.q'
+  }
+  {
+    'comment': 'time/minute/second consts'
+    'match': '[01]\\d\\:[0-5]\\d(?:\\:[0-5]\\d(\\.\\d+)?)?[uvtpn]?\\b'
+    'name': 'constant.numeric.q'
+  }
+  {
+    'comment': 'date constant'
+    'match': '\\d{4}\\.[01]\\d\\.[0-3]\\d[dpnzm]?\\b'
+    'name': 'constant.numeric.q'
+  }
+  {
+    'comment': 'floats'
+    'match': '(?:(?:\\d+(?:\\.\\d*)?|\\.\\d+)[eE][+-]?\\d+|\\d+\\.\\d*|\\.\\d+)[efpnt]?'
+    'name': 'constant.numeric.q'
+  }
+  {
+    'comment': 'system namespaces'
+    'match': '\\.[z|Q|q|h|o]\\.[a-zA-Z0-9_]+'
+    'name': 'support.function.q'
+  }
+  {
+    'comment': 'special ! function'
+    'match': '-[1-9][0-9]?\\s*!'
+    'name': 'support.function.q'
+  }
+  {
+    'match': '\\.[a-zA-Z][a-zA-Z0-9_\\.]*'
+    'name': 'variable.q'
+  }
+  {
+    'match': '[a-zA-Z][a-zA-Z0-9_\\.]*'
+    'name': 'entity.name.q'
+  }
+  {
+    'comment': 'symbols + paths'
+    'match': '(`\\:[\\:a-zA-Z0-9\\._/]*|`(?:[a-zA-Z0-9\\.][\\:a-zA-Z0-9\\._]*)?)'
+    'name': 'support.constant.q'
+  }
+  {
+    'match': "\\'|\\/\\:|\\\\\:|\\'\\:|\\\\|\\/|0\\:|1\\:|2\\:"
+    'name': 'keyword.operator.q'
+  }
+  {
+    'match': '(0x[0-9a-fA-F]+|\\d+[bhicjefpnuvt]?)'
+    'name': 'constant.numeric.q'
+  }
+  {
+    'match': "(?:<=|>=|<>|::)|(?:\\$|%|&|\\@|\\.|\\_|\\#|\\*|\\^|\\-|\\+|\\+|~|\\,|!|>|<|=|\\||\\?|\\:)\\:?"
+    'name': 'keyword.operator.q'
+  }
+  {
+    'match': '^[}\\]].*'
+    'name': '.invalid.illegal.q'
+  }
+  {
+    'match': '[\\[{\\(]'
+    'name': 'meta.brace.open.q'
+  }
+  {
+    'match': '[\\]}\\)]'
+    'name': 'meta.brace.close.q'
+  }
+  {
+    'match': ';'
+    'name': 'meta.punctuation.q'
+  }
+]
