@@ -1,7 +1,7 @@
 {
   "name": "language-kdb-q",
   "main": "./lib/kdb-q",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Language support for Q and K languages of KDB+",
   "keywords": [],
   "repository": "https://github.com/quintanar401/language-kdb-q",
