@@ -18,8 +18,16 @@
   }
   {
     'comment': 'one line comment - beware scan'
-    'match': '(^/.*$|\\s+/.*$)'
+    'match': '^/.*$'
     'name': 'comment.line.q'
+  }
+  {
+    'match': '(\\s+)(/.*$)'
+    'captures':
+      '1':
+        'name': 'ws'
+      '2':
+        'name': 'comment.line.q'
   }
   {
     'comment': 'system command'
@@ -34,6 +42,10 @@
       'match': '\\\\(\\\\|n|t|r|")'
       'name': 'constant.character.escape.q'
     ]
+  }
+  {
+    'match': '^[a-zA-Z]\\)'
+    'name': 'keyword.control.q'
   }
   {
     'match': '\\b(and|or|except|inter|like|each|cross|vs|sv|within|where|in|asof|bin|binr|cor|cov|cut|ej|fby|\
@@ -119,7 +131,7 @@
   }
   {
     'match': '^[}\\]].*'
-    'name': '.invalid.illegal.q'
+    'name': 'invalid.illegal.q'
   }
   {
     'match': '[\\[{\\(]'

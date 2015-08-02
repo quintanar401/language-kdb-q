@@ -8,9 +8,7 @@ module.exports = KdbQ =
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.workspace.observeTextEditors (editor) ->
       return unless editor.getGrammar().scopeName == "source.q"
-      console.log 'before defer'
       _.defer ->
-        console.log 'defer'
         _.adviseBefore editor, 'insertText', (text,opt) -> # hack required to supress bracket-matcher undesired behaviour
           return true unless text
           return true if opt?.select or opt?.undo is 'skip'
