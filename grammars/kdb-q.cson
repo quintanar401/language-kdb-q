@@ -75,13 +75,18 @@
     'name': 'support.function.q'
   }
   {
+    'comment': 'GUID - doesnt exist but it is worth have it for the result output'
+    'match': '([\\da-f]{8}-[\\da-f]{4}-[\\da-f]{4}-[\\da-f]{4}-[\\da-f]{12})\\b'
+    'name': 'constant.numeric.q'
+  }
+  {
     'comment': 'timespan/stamp consts'
-    'match': '(?:\\d+D|\\d\\d\\d\\d\\.[01]\\d\\.[0123]\\d[DT])(?:[01]\\d\\:[0-5]\\d(?:\\:[0-5]\\d(?:\\.\\d+)?)?|([01]\\d)?)[zpn]?\\b'
+    'match': '(?:\\d+D|\\d\\d\\d\\d\\.[01]\\d\\.[0123]\\d[DT])(?:[012]\\d\\:[0-5]\\d(?:\\:[0-5]\\d(?:\\.\\d+)?)?|([012]\\d)?)[zpn]?\\b'
     'name': 'constant.numeric.q'
   }
   {
     'comment': 'time/minute/second consts'
-    'match': '[01]\\d\\:[0-5]\\d(?:\\:[0-5]\\d(\\.\\d+)?)?[uvtpn]?\\b'
+    'match': '[012]\\d\\:[0-5]\\d(?:\\:[0-5]\\d(\\.\\d+)?)?[uvtpn]?\\b'
     'name': 'constant.numeric.q'
   }
   {
@@ -91,7 +96,7 @@
   }
   {
     'comment': 'floats'
-    'match': '(?:(?:\\d+(?:\\.\\d*)?|\\.\\d+)[eE][+-]?\\d+|\\d+\\.\\d*|\\.\\d+)[efpnt]?'
+    'match': '(?:(?:\\d+(?:\\.\\d*)?|\\.\\d+)[eE][+-]?\\d+|\\d+\\.\\d*|\\.\\d+)[efpntm]?'
     'name': 'constant.numeric.q'
   }
   {

@@ -8,3 +8,6 @@
 * 'invalid' scope name fixed
 * Parse 'q)code'-like statements correctly.
 * remove unnecessary console.logs
+## 0.3.0
+* Add GUIDs.
+* Fix timespan, timestamp and month.
