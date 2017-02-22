@@ -11,3 +11,5 @@
 ## 0.3.0
 * Add GUIDs.
 * Fix timespan, timestamp and month.
+## 0.3.1
+* Add toggle comment setting
